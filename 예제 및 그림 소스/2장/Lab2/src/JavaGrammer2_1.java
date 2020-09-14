@@ -33,6 +33,7 @@ public class JavaGrammer2_1 {
 		int price = 20_100; 
 		int x = 15;		// 리터럴 끝에 사용 불가 		
 		double pi = 3.14; 	// 소수점 앞 뒤에 사용 불가
+		System.out.println("price: " + price);
 		System.out.println("x, pi : " + x + ", " + pi);
 		
 		
@@ -42,6 +43,7 @@ public class JavaGrammer2_1 {
 		var name = "영수"; 		// name은 String 타입으로 결정
 		var pi1 = 3.14; 
 		// var val; 			// 초기값 필요
+		System.out.println("price: " + price1 + "\t name: " + name + "\t pi1: " + pi1);
 		
 		// (6번문제) 강제 타입 변환
 		System.out.println("\n(6번) -----------------------------------------------\n");
