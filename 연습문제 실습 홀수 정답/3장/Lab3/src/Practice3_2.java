@@ -14,14 +14,18 @@ public class Practice3_2 {
 		
 		// 배열의 9개 랜덤위치에 랜덤한 정수 생성하여 저장
 		
-		for(int i = 0; i < 4; i++)
+		int count = 0;
+		while(count < 9)
 		{
-			for(int j = 0; j < 4; j++)
+			int row = (int)(Math.random()*4);
+			int col = (int)(Math.random()*4);
+			
+			if(intArray[row][col] == 0)
 			{
-				intArray[i][j] = (int)(Math.random()*9 + 1);
+				intArray[row][col] = (int)(Math.random()*9 + 1);
+				count++;
 			}
 		}
-
 		
 		// 2차원 배열 출력
 		System.out.println("---- Random Matrix ----");
@@ -29,7 +33,7 @@ public class Practice3_2 {
 		{
 			for(int j = 0; j < 4; j++)
 			{
-				System.out.print(intArray[i][j] + " ");
+				System.out.print(intArray[i][j] + "  ");
 			}
 			System.out.println(" ");
 		}		
