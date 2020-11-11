@@ -104,7 +104,7 @@ public class Lab7_1 {
 	}
 
 	private void insert(int choice) {
-		Shape shape=null;
+		
 		switch(choice) {
 		case 1:
 			Line l = new Line();

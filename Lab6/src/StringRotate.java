@@ -15,5 +15,6 @@ public class StringRotate {
 			sb.delete(0, 1);
 			System.out.println(sb);
 		}
+		scanner.close();
 	}
 }
