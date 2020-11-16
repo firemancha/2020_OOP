@@ -31,70 +31,46 @@ public class CalculatorFrameEx2 extends JFrame {
 		public void actionPerformed(ActionEvent e)
 		{
 			JButton bt = (JButton)e.getSource();
-			switch(bt.getText())
-			{
-			case "1":
-				addNumber("1");
-				break;
-			case "2":
-				addNumber("2");
-				break;
-			case "3":
-				addNumber("3");
-				break;
-			case "4":
-				addNumber("4");
-				break;
-			case "5":
-				addNumber("5");
-				break;
-			case "6":
-				addNumber("6");
-				break;
-			case "7":
-				addNumber("7");
-				break;
-			case "8":
-				addNumber("8");
-				break;
-			case "9":
-				addNumber("9");
-				break;
-			case "0":
-				addNumber("0");
-				break;
-			case "reset":
-				won.setText("");
-				dallar.setText("");
-				break;
-			case "변환":
-				if(won_mode)
+			try{
+				if(Integer.parseInt(bt.getText()) >= 0 && Integer.parseInt(bt.getText()) <= 9)
+					addNumber(bt.getText());
+			}
+			catch (Exception e1){
+				switch(bt.getText())
 				{
-					int money = Integer.parseInt(won.getText());
-					dallar.setText(Integer.toString(money / rate));
-				}
-				else
-				{
-					int money = Integer.parseInt(dallar.getText());
-					won.setText(Integer.toString(money * rate));
-				}
-				break;
-			case "(원) -> (달러)":
-				if(won_mode)
-				{
+				case "reset":
 					won.setText("");
 					dallar.setText("");
-					won_mode = false;
+					break;
+				case "변환":
+					if(won_mode)
+					{
+						int money = Integer.parseInt(won.getText());
+						dallar.setText(Integer.toString(money / rate));
+					}
+					else
+					{
+						int money = Integer.parseInt(dallar.getText());
+						won.setText(Integer.toString(money * rate));
+					}
+					break;
+				case "(원) -> (달러)":
+					if(won_mode)
+					{
+						won.setText("");
+						dallar.setText("");
+						won_mode = false;
+					}
+					break;
+				case "(달러) -> (원)":
+					if(!won_mode)
+					{
+						won.setText("");
+						dallar.setText("");
+						won_mode = true;
+					}
+					break;					
 				}
-				break;
-			case "(달러) -> (원)":
-				if(!won_mode)
-				{
-					won.setText("");
-					dallar.setText("");
-					won_mode = true;
-				}
-				break;
 			}
 		}
 	}
