@@ -32,15 +32,10 @@ class CenterPanel extends JPanel {
 	public CenterPanel() {
 		setBackground(Color.WHITE);
 		setLayout(new GridLayout(4,3,4,4));
-		add(new JButton("1"));
-		add(new JButton("2"));
-		add(new JButton("3"));
-		add(new JButton("4"));
-		add(new JButton("5"));
-		add(new JButton("6"));
-		add(new JButton("7"));
-		add(new JButton("8"));
-		add(new JButton("9"));
+		for(int i = 1; i < 10; i++)
+		{
+			add(new JButton(Integer.toString(i)));
+		}
 		add(new JButton("reset"));
 		add(new JButton("0"));
 		add(new JButton("변환"));
@@ -53,6 +48,7 @@ class NorthPanel extends JPanel {
 		setOpaque(true);
 		add(new JLabel("(원)"));
 		add(new JTextField(10));
+		add(new JLabel("     "));
 		add(new JLabel("(달러)"));
 		add(new JTextField(5));
 	}
