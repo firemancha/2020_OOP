@@ -54,7 +54,7 @@ public class CalculatorFrameEx2 extends JFrame {
 						won.setText(Integer.toString(money * rate));
 					}
 					break;
-				case "(원) -> (달러)":
+				case "(달러) -> (원)":
 					if(won_mode)
 					{
 						won.setText("");
@@ -62,7 +62,7 @@ public class CalculatorFrameEx2 extends JFrame {
 						won_mode = false;
 					}
 					break;
-				case "(달러) -> (원)":
+				case "(원) -> (달러)":
 					if(!won_mode)
 					{
 						won.setText("");
