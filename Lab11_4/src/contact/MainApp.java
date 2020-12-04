@@ -68,7 +68,7 @@ public class MainApp extends Application {
         this.primaryStage.setTitle("ContactApp");
 
         // (다음 라인 추가) 애플리케이션 아이콘을 설정한다.
-        this.primaryStage.getIcons().add(new Image("file:resources/images/address_book_32.png"));
+        this.primaryStage.getIcons().add(new Image("file:resources/images/contact_book_512.png"));
         
         initRootLayout();
 
@@ -157,10 +157,13 @@ public class MainApp extends Application {
 	        Scene scene = new Scene(page);
 	        dialogStage.setScene(scene);
 
+	        dialogStage.getIcons().add(new Image("file:resources/images/edit.png"));
+	        
 	        // person을 컨트롤러에 설정한다.
 	        PersonEditDialogController controller = loader.getController();
 	        controller.setDialogStage(dialogStage);
 	        controller.setPerson(person);
+	        
 
 	        // 다이얼로그를 보여주고 사용자가 닫을 때까지 기다린다.
 	        dialogStage.showAndWait();
